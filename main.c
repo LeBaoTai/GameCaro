@@ -250,11 +250,10 @@ void displayHistory(char* history, int numOfMoves) {
     
     int count = 0, index = 0, k = 0;
     char move[30][10];
-    char t[10];
     char test[10];
 
     bool fistMove = true;
-    
+    // cat chuoi chinh thanh cac chuoi nho hon
     while (history[index] != '\0'){
 		if (history[index] >= 'a' && history[index] <= 'o') {
 			int columnNum, rowNum;
@@ -265,8 +264,6 @@ void displayHistory(char* history, int numOfMoves) {
                         test[j] = history[i];
                     }
                     test[j++] = '\0';
-                    // printf("%d %d: ", index, count);
-                    // printf("%s\n", test);
                     strcat(move[k++], test);
 				}
 				else {
@@ -275,8 +272,6 @@ void displayHistory(char* history, int numOfMoves) {
                         test[j] = history[i];
                     }
                     test[j++] = '\0';
-                    // printf("%d %d: ", index, count);
-                    // printf("%s\n", test);
                     strcat(move[k++], test);
 				}
 			}
@@ -285,8 +280,6 @@ void displayHistory(char* history, int numOfMoves) {
                 for (int i = count + 1; i <= index; i++, j++) {
                     test[j] = history[i];
                 }
-                // printf("%d %d: ", index, count);
-                // printf("%s\n", test);
                 strcat(move[k++], test);
 			}
 			count = index;
@@ -326,8 +319,6 @@ void displayHistory(char* history, int numOfMoves) {
         else {
             printf("Invalid input!!! Try again\n");
         }
-
-        // printf("%d %d\n", rowNum, columnNum);
     }
 
     printf("End of history\n");
